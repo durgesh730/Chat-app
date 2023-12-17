@@ -6,6 +6,7 @@ const connectDB = async () => {
     const conn = await mongoose.connect("mongodb+srv://durgeshchaudhary020401:Durgesh%402022@cluster0.azjfogw.mongodb.net/", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useFindAndModify: false
     });
 
     console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline);
