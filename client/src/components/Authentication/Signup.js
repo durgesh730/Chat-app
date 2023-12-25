@@ -13,11 +13,11 @@ const Signup = () => {
   const toast = useToast();
   const navigate = useNavigate();
 
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [confirmpassword, setConfirmpassword] = useState();
-  const [password, setPassword] = useState();
-  const [pic, setPic] = useState();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [confirmpassword, setConfirmpassword] = useState('');
+  const [password, setPassword] = useState('');
+  const [pic, setPic] = useState(null);
   const [picLoading, setPicLoading] = useState(false);
 
   const submitHandler = async () => {
@@ -50,7 +50,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "http://localhost:5000/api/user",
+        "http://localhost:5000/api/user/",
         {
           name,
           email,
@@ -59,6 +59,7 @@ const Signup = () => {
         },
         config
       );
+      console.log(data, "sign up")
       toast({
         title: "Registration Successful",
         status: "success",
@@ -72,7 +73,7 @@ const Signup = () => {
     } catch (error) {
       toast({
         title: "Error Occured!",
-        description: error.response.data.message,
+        description: error.response?.data?.message,
         status: "error",
         duration: 5000,
         isClosable: true,

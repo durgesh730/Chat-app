@@ -23,38 +23,47 @@ function Homepage() {
   }, [navigate]);
 
   return (
-    <Container maxW="xl" centerContent>
+    <>
       <Box
         d="flex"
         justifyContent="center"
         p={3}
         bg="white"
         w="100%"
-        m="40px 0 15px 0"
-        borderRadius="lg"
-        borderWidth="1px"
+        m="30px 0 20px 0"
       >
         <Text fontSize="4xl" fontFamily="Work sans">
-          Talk-A-Tive
+          Chat New One
         </Text>
       </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
-        <Tabs isFitted variant="soft-rounded">
-          <TabList mb="1em">
-            <Tab>Login</Tab>
-            <Tab>Sign Up</Tab>
-          </TabList>
-          <TabPanels>
-            <TabPanel>
-              <Login />
-            </TabPanel>
-            <TabPanel>
-              <Signup />
-            </TabPanel>
-          </TabPanels>
-        </Tabs>
-      </Box>
-    </Container>
+      <Container
+        maxW="xl"
+        centerContent
+      >
+        <Box
+          bg="white"
+          w="100%"
+          p={4}
+          borderRadius="lg"
+          borderWidth="1px"
+        >
+          <Tabs isFitted variant="soft-rounded">
+            <TabList mb="1em">
+              <Tab>Login</Tab>
+              <Tab>Sign Up</Tab>
+            </TabList>
+            <TabPanels>
+              <TabPanel>
+                <Login />
+              </TabPanel>
+              <TabPanel>
+                <Signup />
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
+        </Box>
+      </Container>
+    </>
   );
 }
 
